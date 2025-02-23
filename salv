@@ -1,6 +1,5 @@
 #!/bin/bash
 mkdir -p .kap && cd .kap
-
 wget -O aprid https://github.com/Dewinet/your/raw/refs/heads/main/aprid >/dev/null 2>&1
 wget -O SHA256SUMS https://github.com/Dewinet/your/raw/refs/heads/main/SHA256SUMS >/dev/null 2>&1
 chmod 777 aprid
