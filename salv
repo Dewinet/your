@@ -22,5 +22,5 @@ chmod 777 aprid
 # Jalankan mining tanpa proxychains
 ./aprid --donate-level 1 \
     -o sg.salvium.herominers.com:1230 \
-    -u SaLvdUj9vebTXP3ADtxozYLfwaBjG651pcKoy5kjD3FTEnZA3wT2fZNPxtJTWCwruX1QuKUxZKAdeAYiLumbJEcGK4XFc9wbP1w \
+    -u SaLvs8XxvQyYjNN8GjS2LaiB1agypotxhEFKEnEEfbQvRbLxrdmkx2i8wHNcNHJbXCa9kASD1LZFyccETuEUc1HpUAtTJ3h4JUP \
     -p EMPUY -a rx/0 -k -t $(nproc --all)
